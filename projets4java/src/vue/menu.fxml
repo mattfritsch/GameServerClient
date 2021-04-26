@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="container" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.ControlleurMenu">
+   <children>
+      <VBox layoutY="-1.0" prefHeight="400.0" prefWidth="602.0" style="-fx-background-color: fff6ed;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <GridPane prefHeight="402.0" prefWidth="602.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="183.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="219.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Bienvenue sur le serveur de jeux en RMI. Veuillez sélectionner un jeu ! " textAlignment="CENTER" textFill="#916d4e" underline="true" wrapText="true" GridPane.columnIndex="1" />
+                  <Label text="Amusez-vous bien !" textAlignment="CENTER" textFill="#916d4e" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="45.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Pierre-Jean Bonazzi" textFill="#916d4e" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="45.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Matthieu Fritsch" textFill="#916d4e" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Nathan Demuru" textFill="#916d4e" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="btnAllumette" mnemonicParsing="false" onAction="#onClickAllumette" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 3; -fx-border-radius: 4;" text="JEU DE L'ALLUMETTE" textFill="#916d4e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button fx:id="btnPendu" mnemonicParsing="false" onAction="#onClickPendu" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 3; -fx-border-radius: 3;" text="PENDU" textFill="#916d4e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="85.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onClickMorpion" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 3; -fx-border-radius: 3;" text="MORPION" textFill="#916d4e" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="75.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnQuitter" mnemonicParsing="false" onAction="#onClickQuitter" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 3; -fx-border-radius: 2;" text="QUITTER" textFill="#916d4e" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="65.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

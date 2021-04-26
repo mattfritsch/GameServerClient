@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1033.0" style="-fx-background-color: fff6ed;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.ControlleurAllumette">
+   <children>
+      <VBox fx:id="vboxBienvenue" layoutY="62.0" prefHeight="123.0" prefWidth="581.0">
+         <children>
+            <GridPane fx:id="gpBienvenue" prefHeight="110.0" prefWidth="581.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.0" minWidth="10.0" prefWidth="459.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="60.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblDescriptionAllumette" prefHeight="101.0" prefWidth="449.0" text="Bienvenue sur le jeu des allumettes. Un tas de nombre impair d'allumette est positionné sur la table. Chaque tour un joueur retire une ou deux allumettes. Le jeu se termine quand le tas est vide. Le gagnant est celui qui a prit un nombre impair d'allumettes." textAlignment="JUSTIFY" textFill="#916d4e" wrapText="true">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Button fx:id="btnJouer" mnemonicParsing="false" onAction="#onStart" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 5; -fx-border-radius: 3;" text="Jouer !" textFill="#916d4e" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets bottom="50.0" left="10.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="btnRetour" mnemonicParsing="false" onAction="#onClickRetour" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-radius: 3; -fx-border-width: 5;" text="Retour " textFill="#916d4e" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="50.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox layoutX="698.0" layoutY="377.0" prefHeight="351.0" prefWidth="334.0">
+         <children>
+            <GridPane fx:id="gpEnlever" prefHeight="358.0" prefWidth="334.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="uneAllumette" mnemonicParsing="false" onAction="#onClickUneAllumette" prefHeight="45.0" prefWidth="153.0" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 5; -fx-border-radius: 3;" text="Retirer une allumette" textFill="#916d4e" visible="false">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="deuxAllumettes" mnemonicParsing="false" onAction="#onClickDeuxAllumettes" style="-fx-background-color: beige; -fx-border-color: C8AD7F; -fx-border-width: 5; -fx-border-radius: 3;" text="Retirer deux allumettes" textFill="#916d4e" visible="false" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <ImageView fx:id="imgAllumette2" fitHeight="72.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@allumette2.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="200.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgAllumette1" fitHeight="89.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <GridPane.margin>
+                        <Insets left="200.0" />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@allumette1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox layoutY="166.0" prefHeight="563.0" prefWidth="334.0">
+         <children>
+            <GridPane prefHeight="498.0" prefWidth="244.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblOrdinateur" prefHeight="57.0" prefWidth="244.0" text="L'ordinateur choisit combien d'allumettes il veut retirer..." textFill="#916d4e" visible="false" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="lblNbRetireOrdinateur" text="Label" textFill="#916d4e" visible="false" GridPane.rowIndex="1" />
+                  <Label fx:id="lblNbAllumetteOrdinateur" text="Label" textFill="#916d4e" visible="false" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox layoutX="688.0" layoutY="-2.0" prefHeight="364.0" prefWidth="347.0">
+         <children>
+            <GridPane prefHeight="311.0" prefWidth="315.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblJoueur" text="Veuillez retirer une ou deux allumettes" textFill="#916d4e" visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="lblNbAllumetteRetireJoueur" text="Label" textFill="#916d4e" visible="false" GridPane.rowIndex="1" />
+                  <Label fx:id="lblNbAllumetteJoueur" text="Label" textFill="#916d4e" visible="false" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox fx:id="vboxVictoire" layoutX="320.0" layoutY="136.0" prefHeight="591.0" prefWidth="334.0">
+         <children>
+            <GridPane fx:id="gpResultat" prefHeight="458.0" prefWidth="229.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints fx:id="colonneVictoire" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblNombreTotalAllumette" text="Label" textFill="#916d4e" visible="false">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Label>
+                  <Label fx:id="lblGagnant" text="Label" textAlignment="CENTER" textFill="#916d4e" underline="true" visible="false" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="100.0" />
+                     </GridPane.margin></Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <GridPane prefHeight="51.0" prefWidth="1033.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="809.0" minWidth="10.0" prefWidth="809.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="510.0" minWidth="10.0" prefWidth="224.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="lblTitreAllumette" prefHeight="51.0" prefWidth="744.0" style="-fx-text-alignment: center; -fx-border-color: C8AD7F; -fx-border-width: 3; -fx-border-radius: 3;" text=" Jeu des allumettes" textAlignment="CENTER" textFill="#916d4e">
+               <font>
+                  <Font size="33.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="350.0" right="175.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

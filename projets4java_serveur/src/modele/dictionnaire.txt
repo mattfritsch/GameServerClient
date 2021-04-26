@@ -1,0 +1,15 @@
+test
+rivaille
+pendu
+alumette
+titan
+habit
+mobile
+telephone
+ordinateur
+javafx
+intellij
+voiture
+camion
+lego
+etoile
